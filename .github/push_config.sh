@@ -32,7 +32,7 @@ curl https://api.humanitec.io/orgs/${HUMANITEC_ORG}/apps/${HUMANITEC_APP}/deltas
 DELTA_ID="$(cat tmp_delta_id.json | jq -r)"
 
 
-echo curl https://api.humanitec.io/orgs/${HUMANITEC_ORG}/apps/${HUMANITEC_APP}/envs/development/deploys \
+curl https://api.humanitec.io/orgs/${HUMANITEC_ORG}/apps/${HUMANITEC_APP}/envs/development/deploys \
   -H "Authorization: Bearer $HUMANITEC_TOKEN" \
   -H "Content-Type: application/json" \
   -X POST \
