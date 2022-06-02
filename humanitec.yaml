@@ -6,7 +6,7 @@ workload:
   profile: humanitec/default-module
   spec:
     containers:
-      sample-app:
+      main:
         variables: {}
     ingress:
       rules:
