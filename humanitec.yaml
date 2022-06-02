@@ -7,7 +7,8 @@ workload:
   spec:
     containers:
       main:
-        variables: {}
+        variables:
+          PORT: 8080
     ingress:
       rules:
         externals.dns:
