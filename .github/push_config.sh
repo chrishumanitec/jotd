@@ -6,7 +6,10 @@ HUMANITEC_ORG=product-demo-01
 HUMANITEC_APP=of-the-day
 IMAGE_NAME="registry.humanitec.io/product-demo-01/jotd:${GITHUB_SHA}"
 
-wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O yq
+echo Fetching yq
+wget -q https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O yq
+
+chmod u+x yq
 
 # Convert humanitec.yaml into a delta
 DELTA="$(./yq e -o json ' .workload.spec.containers.main.image="'${IMAGE_NAME}'" |
