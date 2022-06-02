@@ -12,3 +12,8 @@ jobs:
         with:
           humanitec-token: ${{ secrets.HUMANITEC_TOKEN }}
           organization: product-demo-01
+      - name: Deploy with config
+        run: |
+          /bin/bash "${GITHUB_WORKSPACE}/.github/push_config.sh"
+        env:
+          HUMANITEC_TOKEN: ${{ secrets.HUMANITEC_TOKEN }}

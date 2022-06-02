@@ -1,0 +1,17 @@
+id: sample-app
+workload:
+  externals:
+    dns:
+      type: dns
+  profile: humanitec/default-module
+  spec:
+    containers:
+      sample-app:
+        variables: {}
+    ingress:
+      rules:
+        externals.dns:
+          http:
+            '*':
+              port: 8080
+              type: default
