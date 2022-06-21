@@ -8,7 +8,7 @@ workload:
     containers:
       main:
         variables:
-          MESSAGE: "Hello demo"
+          MESSAGE: "Hello World"
           PORT: "8080"
     ingress:
       rules:
