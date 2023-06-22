@@ -38,5 +38,5 @@ jobs:
       - name: Run Score
         if: steps.changes.outputs.scorefiles == 'true'
         run: |
-          sed -E 's/^(\s+image:)\s+/$1 "registry.humanitec.io/${{ vars.HUMANITEC_ORG }}/${GITHUB_REPOSITORY##*/}:${GITHUB_SHA}"'
+          sed -i -E "s/^(\\s+image:)\\s+.*\$/\\1 'registry.humanitec.io\\/chris-02\\/${GITHUB_REPOSITORY##*/}:${GITHUB_SHA}'/" score.yaml
           score-humanitec delta --retry --deploy --token ${{ secrets.HUMANITEC_TOKEN }} --org ${{ vars.HUMANITEC_ORG }} --app jotd --env development
