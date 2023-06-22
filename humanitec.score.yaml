@@ -1,0 +1,9 @@
+apiVersion: humanitec.org/v1b1
+spec:
+  "ingress":
+    rules:
+      "${resources.jotd-dns}":
+        http:
+          "/":
+            type: prefix
+            port: 3000
