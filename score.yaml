@@ -5,3 +5,7 @@ metadata:
 containers:
   jotd:
     image: .
+
+resources:
+  jotd-dns:
+    type: dns
