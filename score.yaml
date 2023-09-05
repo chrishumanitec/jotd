@@ -4,3 +4,12 @@ metadata:
 containers:
   jotd:
     image: .
+resources:
+  jotd-dns:
+    type: dns
+  jotd-route:
+    type: route
+    params:
+      path: /
+      port: 8080
+      host: ${resources.jotd-dns.host}
